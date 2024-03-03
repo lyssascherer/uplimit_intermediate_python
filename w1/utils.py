@@ -110,37 +110,15 @@ class DataReader:
             'TotalPrice': 79.84,
             'Country': 'Russia',
         }
-        """
-    ######################################## YOUR CODE HERE ##################################################
-        # output generator -- use 'yield' keyword 
-        # generate each row: dictionary comprehension
-        
+        """  
         for n_row, row in enumerate(open(self._fp, "r")):
             row_vals = row.strip('\n').split(self._sep)
-            
-            # define the row_vals dictionary 
             row_vals = {k:v for k, v in zip(self._col_names, row_vals)}
             row_vals['n_row'] = n_row
-
-            # return results: 
             yield row_vals
     
-    ######################################## YOUR CODE HERE ##################################################
-
     def get_file_path(self):
         return self._fp
 
     def get_column_names(self):
         return self._col_names
-
-if __name__ == "__main__":
-    fp = "/workspaces/uplimit_intermediate_python/data/tst/2015.csv"
-    sep = ","
-    col_names = "StockCode,Description,UnitPrice,Quantity,TotalPrice,Country,InvoiceNo,Date".split(",")
-    dr = DataReader(fp, sep, col_names)
-    
-    dr_gen = (row for row in dr)
-
-    print(next(dr_gen))
-    print(next(dr_gen))
-    print(next(dr_gen))
