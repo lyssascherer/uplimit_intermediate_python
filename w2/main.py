@@ -145,7 +145,7 @@ def main() -> List[Dict]:
     """
 
     st = time.time()
-    n_processes = 1#multiprocessing.cpu_count() # you may modify this number - check out multiprocessing.cpu_count() as well
+    n_processes = 4#multiprocessing.cpu_count() # you may modify this number - check out multiprocessing.cpu_count() as well
     print("n_processes: ", n_processes)
     parser = argparse.ArgumentParser(description="Choose from one of these : [tst|sml|bg]")
     parser.add_argument('--type',
