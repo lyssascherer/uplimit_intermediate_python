@@ -41,7 +41,8 @@
             var url = new URL(urlString);
 
             // Make a websocket connection
-            var ws = new WebSocket(`ws://localhost:8000/ws`);
+            // var ws = new WebSocket(`ws://localhost:8000/ws`);
+            var ws = new WebSocket(`wss://automatic-space-system-wr5p6j4v59whx65-8000.app.github.dev/ws`);
 
             // On receiving a message, append it to the unordered list `messages`
             function processMessage(event) {
